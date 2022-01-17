@@ -1,1 +1,21 @@
-//- mixin news
+- news1 = "Txhe Taliban will face a bleak economy, former Afghan central banker predicts"
+- news2 = "Paralympic 'Rising Phoenix' Netflix documentary will make you laugh and cry"
+- news3 = "'Black Widow' streaming numbers fire up the ScarJo vs Disney lawsuit"
+- news4 = "From 'air-pocalypse' to blue skies: Rare victory for public dissent in Beijing"
+- news5 = "Josephine Baker will be the first Black woman buried at the Panthéon in Paris"
+- news6 = "US golfer wins first stage of PGA Tour's finale, his first victory in 1,975 days"
+
+- desc1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+- desc2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+- desc3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+- desc4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+- desc5 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+- desc6 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+mixin news-item(image, tt, desc)
+    .block
+        +a('news-detail.html', 'absolute')
+        .thumb-res.wide: +img('news/'+image)(class="fit-cover")
+        .info 
+            .tt=tt
+            .desc=desc
