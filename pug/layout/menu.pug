@@ -1,0 +1,102 @@
+block menu
+    nav.navigate-dym#navigate
+        .menu
+            .menu-header
+                .d-flex.align-items-center.justify-content-between
+                    if login 
+                        .d-flex.align-items-center.us 
+                            .us-avatar.avatar.avatar-sm.rounded-circle N 
+                            .fw-medium Nguyen Van A
+                    else 
+                        +a('login.html', 'btn flex-fill btn-outline-primary mr-2', 'Đăng nhập')
+                        +a('login.html', 'btn flex-fill btn-primary', 'Đăng ký')
+                    //- button.btn-close#close-menu(type="button")
+                .language.mt-2.d-flex.justify-content-end.align-items-center
+                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") English
+                    span.mx-1 |
+                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") Tiếng việt
+            .menu-body
+                ul.menu-slide
+                    li(class=(menu_active=='index' ? 'active' : ''))
+                        a(href="index.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-home
+                            | Trang chủ
+                    li(class=(menu_active=='about' ? 'active' : ''))
+                        a(href="about.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-user-circle
+                            | Giới thiệu
+                    li(class=(menu_active=='services' ? 'active' : ''))
+                        a(href="services.html" title="" alt="")
+                            span.menu-icon.far.fa-cog
+                            | Dịch vụ
+                        ul.menu-slide-sub
+                            li: a(href="services.html" title="" alt="" target="_self") Donec rutrum Pisisd
+                            li: a(href="services.html" title="" alt="" target="_self") Morbi placerat Blue
+                            li: a(href="services.html" title="" alt="" target="_self") Ut elementum Leo
+                            li: a(href="services.html" title="" alt="" target="_self") Vestibulum Egestas
+                            li: a(href="services.html" title="" alt="" target="_self") Nulla vel Eros Sed
+                    li(class=(menu_active=='projects' ? 'active' : ''))
+                        a(href="projects.html" title="" alt="")
+                            span.menu-icon.far.fa-briefcase
+                            | Dự án
+                        ul.menu-slide-sub
+                            li: a(href="projects.html" title="" alt="" target="_self") Phasellus eget lorem
+                            li: a(href="projects.html" title="" alt="" target="_self") Laoreet portt sodales
+                            li: a(href="projects.html" title="" alt="" target="_self") Fusce viverra erata
+                            li: a(href="projects.html" title="" alt="" target="_self") Nulla accumsan telien
+                            li: a(href="projects.html" title="" alt="" target="_self") Donec scelers nisiin
+                    li(class=(menu_active=='products' ? 'active' : ''))
+                        a(href="products.html" title="" alt="")
+                            span.menu-icon.far.fa-shopping-basket
+                            | Sản phẩm
+                        ul.menu-slide-sub
+                            li
+                                a(href="events.html" title="" alt="" target="_self") Donec biben miutdiam
+                                ul
+                                    li: a(href="events.html" title="" alt="" target="_self") Phasellus eget lorem
+                                    li: a(href="events.html" title="" alt="" target="_self") Laoreet portt sodales
+                                    li: a(href="events.html" title="" alt="" target="_self") Fusce viverra erata
+                                    li: a(href="events.html" title="" alt="" target="_self") Nulla accumsan telien
+                                    li: a(href="events.html" title="" alt="" target="_self") Donec scelers nisiin
+                            li
+                                a(href="events.html" title="" alt="" target="_self") Suspendis ultries sapien
+                                ul
+                                    li: a(href="events.html" title="" alt="" target="_self") Etiam pulvina justo 
+                                    li: a(href="events.html" title="" alt="" target="_self") Vtaelecs efficitur
+                                    li: a(href="events.html" title="" alt="" target="_self") Cras laoreet odceler
+                                    li: a(href="events.html" title="" alt="" target="_self") Curabitur ullamrper
+                            li
+                                a(href="events.html" title="" alt="" target="_self") Sitamet sagits pellen
+                                ul
+                                    li: a(href="events.html" title="" alt="" target="_self") Nisi vel valiquam
+                                    li: a(href="events.html" title="" alt="" target="_self") Suspendi quis velit
+                                    li: a(href="events.html" title="" alt="" target="_self") Tortor pellsque saged
+                                    li: a(href="events.html" title="" alt="" target="_self") Suspen luctus nequed
+                            li: a(href="events.html" title="" alt="" target="_self") Mauris viverra quam
+                            li: a(href="events.html" title="" alt="" target="_self") Donec rutrum commodo
+                            li: a(href="events.html" title="" alt="" target="_self") Maecenas sceleue purus
+                            li: a(href="events.html" title="" alt="" target="_self") Hendrerit orci volupad
+                    li(class=(menu_active=='gallery' ? 'active' : ''))
+                        a(href="gallery.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-th-large
+                            | Thư viện
+                    li(class=(menu_active=='news' ? 'active' : ''))
+                        a(href="news.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-money-check
+                            | Tin tức
+                    li(class=(menu_active=='recruitment' ? 'active' : ''))
+                        a(href="recruitment.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-id-card
+                            | Tuyển dụng
+                    li(class=(menu_active=='contact' ? 'active' : ''))
+                        a(href="contact.html" title="" alt="" target="_self")
+                            span.menu-icon.far.fa-id-card-alt
+                            | Liên hệ
+            .menu-footer
+                .fs-14.text-uppercase.fw-medium.mb-2 Thông tin Liên hệ
+                .p-icon 
+                    i.mr-3.far.fa-phone.fa-flip-horizontal
+                    +phone_a()
+                .p-icon 
+                    i.mr-3.far.fa-envelope
+                    +mail_a()

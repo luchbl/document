@@ -1,0 +1,28 @@
+block footer
+    footer.footer
+        .container
+            .row
+                .footer-col.col-md-4
+                    .footer-tt.tt-xs.text-uppercase Liên hệ
+                    +contact_info()
+                    
+                .footer-col.col-md-4.news.d-none.d-md-block
+                    .footer-tt.tt-xs.text-uppercase Chính sách
+                    ul.list-style-angle 
+                        li: +a('privacy.html', '', 'Chính sách bảo mật')
+                        li: +a('privacy.html', '', 'Quy định đổi trả')
+                        li: +a('privacy.html', '', 'Hướng dẫn thanh toán')
+                        li: +a('privacy.html', '', 'Hỗ trợ khách hàng')
+                .footer-col.col-md-4.gallery.d-none.d-md-block
+                    .footer-tt.tt-xs.text-uppercase Bài viết mới
+        .copyr
+            .container
+                .d-md-flex.justify-content-between.align-items-center
+                    .col-left.my-2
+                        | © 2021 <b>!{companyName}</b>. All Rights Reserved. 
+                        span.text-nowrap Powered by 
+                            a(href="//bizmac.com" title="BizMaC, Thiết kế website chuyên nghiệp" target="_blank") BizMaC
+                    .col-right.my-2.d-flex.align-items-center
+                        //- | Lượt truy cập: 1.452  |  Online: 153
+                        +list_social()
+                        a.ml-3(href="#" target="_blank"): img(src="css/skin/thongbao-bct.png" width="110px" alt="")
