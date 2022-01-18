@@ -257,6 +257,7 @@
 	}
 }
 // 
+.carousel-c1md3,
 .carousel-c2md4,
 .carousel-c2md3,
 .carousel-c2md5 {
@@ -272,10 +273,15 @@
     	bottom: -20px;
     }
 }
+.carousel-c1md3 {
+	--cell-count: 1;
+    --cell-mr: 5%;
+}
 @include media-breakpoint-up(md) {
+	.carousel-c1md3,
 	.carousel-c2md3 {
 		--cell-count: 3;
-		--cell-mr: 2%;
+		--cell-mr: 3%;
 	}
 	.carousel-c2md4 {
 		--cell-count: 4;
