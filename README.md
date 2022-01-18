@@ -6,6 +6,7 @@
 - nav-responsive
 - partner-logo
 - recruitment + detail
+- module-bootstrap
 
 
 # library.scss
@@ -17,3 +18,5 @@
 
 - @import "pages/home-slider2";
 - @import "pages/home-slider3";
+
+- @import "pages/module-bootstrap";

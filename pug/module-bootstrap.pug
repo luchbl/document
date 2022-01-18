@@ -1,0 +1,102 @@
+extends template/template
+block vars
+    - title = 'Module Boostrap'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5.border-bottom 
+            .text-center
+                .tt-sm Modal Modules
+                .desc.fs-18.mb-3 Modal thêm css mới: pages/modal.scss
+                button.btn.btn-sm.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#modal-schedule") Modal Schedule
+            //- modal schedule
+            .modal.fade#modal-schedule(tabindex="-1")
+                .modal-dialog.modal-dialog-centered
+                    .modal-content.border-0
+                        //- button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+                        .modal-header
+                            h5.modal-title Modal title - Modal Default
+                            button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+                        .modal-body 
+                            .mx-auto.text-center
+                                .fal.fa-4x.fa-check-circle.mb-3.text-success
+                            .px-5.pb-4.text-center.fs-18 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dicta, omnis expedita eaque quae voluptas perferendis nihil quia in, qui sequi modi illo sit hic possimus! Dolorem nulla facilis natus!
+            
+            //- modal flash sale
+            .modal.fade.modal-saleup#modal-saleup(tabindex="-1" data-bs-backdrop="static")
+                .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                    .modal-content.border-0
+                        button.btn-close.btn-close-white(type="button" data-bs-dismiss="modal")
+                        //- a(href="#"): img(src="https://cdn.pixabay.com/photo/2017/08/06/22/44/laptop-2597139_960_720.jpg", alt)
+                        a(href="#"): img(src="https://cdn.pixabay.com/photo/2017/07/31/18/17/laptop-2559707_960_720.jpg", alt)
+
+        .container.py-5.border-bottom 
+            .text-center.mb-5
+                .tt-sm Tabs Modules
+                .desc.fs-18 Module này không có thêm css, thừa kế cái nav-responsive, js lấy từ demo nav-responsive
+            .nav-responsive#nav-responsive.theme-line
+                .nav.nav-nowrap#nav-nowrap
+                    button.nav-item(data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-selected="true").active Nhà đất bán
+                    button.nav-item(data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-selected="false") Nhà đất cho thuê
+                    button.nav-item(data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-selected="false") Dự án
+            .tab-content#nav-tabContent
+                .tab-pane.fade.show.active#tab1
+                    .tt-xs.text-uppercase.mb-3.text-linkedin Nội dung tab 1
+                    p Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.
+                    p Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu "Nội dung, nội dung, nội dung" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn "Lorem ipsum" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).
+                    p &nbsp;
+                    .tt-xs.text-uppercase.mb-3.text-linkedin Tính năng đáng kể
+                    p  Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng.
+                    ul  
+                        li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        li Mauris eu nisi sit amet enim facilisis lacinia.
+                        li Sed quis erat nec arcu bibendum condimentum.
+                        li Praesent ac felis accumsan risus volutpat molestie non ac massa.
+                .tab-pane.fade#tab2
+                    .tt-xs.text-uppercase.mb-3.text-linkedin Nội dung Tab 2
+                    p Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.
+                    p Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu "Nội dung, nội dung, nội dung" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn "Lorem ipsum" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).
+                .tab-pane.fade#tab3 
+                    .tt-xs.text-uppercase.mb-3.text-linkedin Nội dung Tab 3
+                    p  Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng.
+                    ul  
+                        li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        li Mauris eu nisi sit amet enim facilisis lacinia.
+                        li Sed quis erat nec arcu bibendum condimentum.
+                        li Praesent ac felis accumsan risus volutpat molestie non ac massa.
+                    
+
+
+append scripts 
+    script. 
+        //-  modal flash sale
+        window.onload = function() {
+            $('#modal-saleup').modal('show');
+        }
+        $(function() {
+            //- nav tab
+            var children = document.getElementById('nav-scrollx').children;
+            var totalWidth = 0;
+            for (var i = 0; i < children.length; i++) {
+                totalWidth += children[i].offsetWidth;
+            }
+            if (totalWidth > $('#nav-responsive').outerWidth()) {
+                $('#nav-nowrap').addClass('d-flex');
+            } else {
+                $('#nav-nowrap').removeClass('d-flex');
+            }
+            //- Set height for nav
+            window.onload = function() {
+                var nav_height = $('#nav-responsive .nav-item').outerHeight(true);
+                $('#nav-responsive').height(nav_height);
+            }
+        })

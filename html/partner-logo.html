@@ -190,14 +190,18 @@
       </div>
       <main class="mainer">
         <div class="container py-5"> 
-          <div class="carousel-logo"> 
-            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/logo.png" alt=""/></a>
+          <div class="carousel-logo" id="carousel-logo">
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/1.jpg" alt=""/></a>
             </div>
-            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/logo.png" alt=""/></a>
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/2.jpg" alt=""/></a>
             </div>
-            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/logo.png" alt=""/></a>
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/3.jpg" alt=""/></a>
             </div>
-            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/logo.png" alt=""/></a>
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/4.jpg" alt=""/></a>
+            </div>
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/5.jpg" alt=""/></a>
+            </div>
+            <div class="carousel-cell"><a class="thumb-res wide mb-0" href="#" title="" alt="" target="_self"><img src="css/skin/partner/6.jpg" alt=""/></a>
             </div>
           </div>
         </div>
@@ -255,14 +259,15 @@
     <script src="css/plugins/wow.min.js"></script>
     <script src="css/js/main.min.js"></script>
     <script>
-      $('.carousel-logo').flickity({
-          contain: true,
-          //cellAlign: 'left',
-          groupCells: '100%',
-          pageDots: false,
-          autoPlay: 3000,
-          pauseAutoPlayOnHover: false,
-          wrapAround: true,
+      $(function(){
+          $('#carousel-logo').flickity({
+              contain: true,
+              pageDots: false,
+              autoPlay: 3000,
+              pauseAutoPlayOnHover: false,
+              wrapAround: true,
+              cellAlign: 'left',
+          });
       });
     </script>
     <div id="fb-root"></div>

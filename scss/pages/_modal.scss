@@ -1,0 +1,33 @@
+.modal-saleup {
+    .btn-close {
+        @include absolute(0,0);
+        z-index: 111;
+        padding: .5rem;
+        background-color: rgba(#fff,.5);
+        width: 1.25rem;
+        height: 1.25rem;
+        background-size: 10px;
+        border-radius: 0 4px 0 4px;
+    }
+    .modal-content {
+        background-color: transparent;
+    }
+    @include media-breakpoint-up(md) {
+        .modal-dialog {
+            justify-content: center;
+            min-height: 0;
+            height: 100%;
+            width: 92%;
+            max-width: 1080px;
+            padding: 2rem 1.5rem;
+            margin: auto;
+        }
+        .modal-content {
+            width: auto;
+            display: block;
+        }
+        img {
+            max-height: calc(100vh - 4rem);
+        }
+    }
+}

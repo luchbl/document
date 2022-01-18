@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>Module Boostrap</title>
     <link rel="shortcut icon" href="favicon.png">
     <link href="css/library.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -177,31 +177,89 @@
       <div class="banner-lg block-bg" style="background-image: url('css/skin/slider/banner.jpg')">
         <div class="container d-flex align-items-center h-100">
           <div class="text-banner">
-            <h1 class="tt-md text-uppercase">Document</h1>
+            <h1 class="tt-md text-uppercase">Module Boostrap</h1>
             <nav arial-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html" title="" alt="" target="_self"><i class="far fa-home"></i></a>
                 </li>
-                <li class="breadcrumb-item active">Document</li>
+                <li class="breadcrumb-item active">Module Boostrap</li>
               </ol>
             </nav>
           </div>
         </div>
       </div>
       <main class="mainer">
-        <div class="container py-5"> 
-          <div class="tt-sm mb-4 text-capitalize text-primary text-center">Menu Responsive with Drag X use jQuery (+ theme line)</div>
-          <div class="nav-responsive theme-line" id="nav-responsive">
-            <div class="nav-nowrap" id="nav-nowrap"><a class="nav-item" href="#" title="" alt="" target="_self">International</a><a class="nav-item" href="#" title="" alt="" target="_self">Brurch Fours</a><a class="nav-item active" href="#" title="" alt="" target="_self">Branch Detouch</a><a class="nav-item" href="#" title="" alt="" target="_self">Haward Browse</a><a class="nav-item" href="#" title="" alt="" target="_self">Lands Hawings</a><a class="nav-item" href="#" title="" alt="" target="_self">Garage Bluetend</a><a class="nav-item" href="#" title="" alt="" target="_self">International</a><a class="nav-item" href="#" title="" alt="" target="_self">Brurch Fours</a><a class="nav-item" href="#" title="" alt="" target="_self">Branch Detouch</a><a class="nav-item" href="#" title="" alt="" target="_self">Haward Browse</a><a class="nav-item" href="#" title="" alt="" target="_self">Lands Hawings</a><a class="nav-item" href="#" title="" alt="" target="_self">Garage Bluetend</a><a class="nav-item" href="#" title="" alt="" target="_self">International</a>
+        <div class="container py-5 border-bottom"> 
+          <div class="text-center">
+            <div class="tt-sm">Modal Modules</div>
+            <div class="desc fs-18 mb-3">Modal thêm css mới: pages/modal.scss</div>
+            <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal-schedule">Modal Schedule</button>
+          </div>
+          <div class="modal fade" id="modal-schedule" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-0">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title - Modal Default</h5>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"> 
+                  <div class="mx-auto text-center">
+                    <div class="fal fa-4x fa-check-circle mb-3 text-success"></div>
+                  </div>
+                  <div class="px-5 pb-4 text-center fs-18">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dicta, omnis expedita eaque quae voluptas perferendis nihil quia in, qui sequi modi illo sit hic possimus! Dolorem nulla facilis natus!</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="content p-5 rounded text-center bg-lighter my-45">
-            <p><b>Explaind </b></p>
-            <p class="fs-18">1. Nếu list dài quá container thì container add class d-flex để cho mục active sẽ trôi lên đầu list <br>2. Nếu list ngắn hơn container thì container mặc định là display: block để các item canh giữa</p>
+          <div class="modal fade modal-saleup" id="modal-saleup" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content border-0">
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"></button><a href="#"><img src="https://cdn.pixabay.com/photo/2017/07/31/18/17/laptop-2559707_960_720.jpg" alt></a>
+              </div>
+            </div>
           </div>
-          <div class="my-4 tt-sm mb-4 text-capitalize text-primary text-center">theme default</div>
-          <div class="nav-responsive" id="nav-responsive">
-            <div class="nav-nowrap" id="nav-nowrap"><a class="nav-item" href="#" title="" alt="" target="_self">International</a><a class="nav-item" href="#" title="" alt="" target="_self">Brurch Fours</a><a class="nav-item active" href="#" title="" alt="" target="_self">Branch Detouch</a><a class="nav-item" href="#" title="" alt="" target="_self">Haward Browse</a><a class="nav-item" href="#" title="" alt="" target="_self">Lands Hawings</a><a class="nav-item" href="#" title="" alt="" target="_self">Garage Bluetend</a><a class="nav-item" href="#" title="" alt="" target="_self">International</a><a class="nav-item" href="#" title="" alt="" target="_self">Brurch Fours</a>
+        </div>
+        <div class="container py-5 border-bottom"> 
+          <div class="text-center mb-5">
+            <div class="tt-sm">Tabs Modules</div>
+            <div class="desc fs-18">Module này không có thêm css, thừa kế cái nav-responsive, js lấy từ demo nav-responsive</div>
+          </div>
+          <div class="nav-responsive theme-line" id="nav-responsive">
+            <div class="nav nav-nowrap" id="nav-nowrap">
+              <button class="nav-item active" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-selected="true">Nhà đất bán</button>
+              <button class="nav-item" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-selected="false">Nhà đất cho thuê</button>
+              <button class="nav-item" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-selected="false">Dự án</button>
+            </div>
+          </div>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="tab1">
+              <div class="tt-xs text-uppercase mb-3 text-linkedin">Nội dung tab 1</div>
+              <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.</p>
+              <p>Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu "Nội dung, nội dung, nội dung" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn "Lorem ipsum" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).</p>
+              <p>&nbsp;</p>
+              <div class="tt-xs text-uppercase mb-3 text-linkedin">Tính năng đáng kể</div>
+              <p> Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng.</p>
+              <ul> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Mauris eu nisi sit amet enim facilisis lacinia.</li>
+                <li>Sed quis erat nec arcu bibendum condimentum.</li>
+                <li>Praesent ac felis accumsan risus volutpat molestie non ac massa.</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="tab2">
+              <div class="tt-xs text-uppercase mb-3 text-linkedin">Nội dung Tab 2</div>
+              <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.</p>
+              <p>Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu "Nội dung, nội dung, nội dung" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn "Lorem ipsum" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).</p>
+            </div>
+            <div class="tab-pane fade" id="tab3"> 
+              <div class="tt-xs text-uppercase mb-3 text-linkedin">Nội dung Tab 3</div>
+              <p> Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng.</p>
+              <ul> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Mauris eu nisi sit amet enim facilisis lacinia.</li>
+                <li>Sed quis erat nec arcu bibendum condimentum.</li>
+                <li>Praesent ac felis accumsan risus volutpat molestie non ac massa.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -259,67 +317,28 @@
     <script src="css/plugins/wow.min.js"></script>
     <script src="css/js/main.min.js"></script>
     <script>
-      //- total width item to align center item or left
-      var children = document.getElementById('nav-nowrap').children;
-      var totalWidth = 0;
-      for (var i = 0; i < children.length; i++) {
-          totalWidth += children[i].offsetWidth;
-      }
-      if (totalWidth > $('#nav-responsive').outerWidth()) {
-          $('#nav-nowrap').addClass('d-flex');
-      } else {
-          $('#nav-nowrap').removeClass('d-flex');
-      }
-      //- Set height for nav
+      //-  modal flash sale
       window.onload = function() {
-          var nav_height = $('#nav-responsive .nav-item').outerHeight(true);
-          $('#nav-responsive').height(nav_height);
+          $('#modal-saleup').modal('show');
       }
-      
-      //- Drag Horizontal
-      const slider = document.querySelector(".nav-nowrap");
-      const preventClick = (e) => {
-          e.preventDefault();
-          e.stopImmediatePropagation();
-      }
-      let isDown = false;
-      let isDragged = false;
-      let startX;
-      let scrollLeft;
-      slider.addEventListener("mousedown", e => {
-          isDown = true;
-          slider.classList.add("active");
-          startX = e.pageX - slider.offsetLeft;
-          scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener("mouseleave", () => {
-          isDown = false;
-          slider.classList.remove("active");
-      });
-      slider.addEventListener("mouseup", (e) => {
-          isDown = false;
-          const elements = document.querySelectorAll("a");
-          if (isDragged) {
-              for (let i = 0; i < elements.length; i++) {
-                  elements[i].addEventListener("click", preventClick);
-              }
+      $(function() {
+          //- nav tab
+          var children = document.getElementById('nav-scrollx').children;
+          var totalWidth = 0;
+          for (var i = 0; i < children.length; i++) {
+              totalWidth += children[i].offsetWidth;
           }
-          else {
-              for (let i = 0; i < elements.length; i++) {
-                  elements[i].removeEventListener("click", preventClick);
-              }
+          if (totalWidth > $('#nav-responsive').outerWidth()) {
+              $('#nav-nowrap').addClass('d-flex');
+          } else {
+              $('#nav-nowrap').removeClass('d-flex');
           }
-          slider.classList.remove("active");
-          isDragged = false;
-      });
-      slider.addEventListener("mousemove", e => {
-          if (!isDown) return;
-          isDragged = true;
-          e.preventDefault();
-          const x = e.pageX - slider.offsetLeft;
-          const walk = (x - startX) * 2;
-          slider.scrollLeft = scrollLeft - walk;
-      });
+          //- Set height for nav
+          window.onload = function() {
+              var nav_height = $('#nav-responsive .nav-item').outerHeight(true);
+              $('#nav-responsive').height(nav_height);
+          }
+      })
     </script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v12.0&amp;appId=1769235226437326&amp;autoLogAppEvents=1" nonce="qTkYIPYq"></script>

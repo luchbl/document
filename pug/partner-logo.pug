@@ -14,24 +14,21 @@ append breadcrumb
 block mainer
     main.mainer
         .container.py-5 
-            .carousel-logo 
-                .carousel-cell
-                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
-                .carousel-cell
-                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
-                .carousel-cell
-                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
-                .carousel-cell
-                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
+            .carousel-logo#carousel-logo
+                - n = 1
+                while n <= 6
+                    .carousel-cell
+                        +a('#', 'thumb-res wide mb-0'): +img('partner/'+n+++'.jpg')
 
 append scripts 
     script. 
-        $('.carousel-logo').flickity({
-            contain: true,
-            //cellAlign: 'left',
-            groupCells: '100%',
-            pageDots: false,
-            autoPlay: 3000,
-            pauseAutoPlayOnHover: false,
-            wrapAround: true,
+        $(function(){
+            $('#carousel-logo').flickity({
+                contain: true,
+                pageDots: false,
+                autoPlay: 3000,
+                pauseAutoPlayOnHover: false,
+                wrapAround: true,
+                cellAlign: 'left',
+            });
         });

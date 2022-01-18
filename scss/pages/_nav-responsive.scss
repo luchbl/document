@@ -1,6 +1,7 @@
 .nav-responsive {
     overflow: hidden;
     margin-bottom: 1rem;
+    display: block;
 
     .nav-nowrap {
         margin-bottom: -24px;
@@ -9,6 +10,7 @@
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
+        flex-wrap: nowrap;
         text-align: center;
     }
     .nav-item {
@@ -27,6 +29,10 @@
             background: $primary;
             color: #fff;
         }
+    }
+    .nav > .nav-item.active,
+    .nav > .nav-link.active {
+        order: initial;
     }
 }
 
