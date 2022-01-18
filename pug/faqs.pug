@@ -1,0 +1,35 @@
+extends template/template
+block vars
+    - title = 'Câu hỏi thường gặp'
+    - menu_active = 'faqs'
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5 
+            .tt-md.text-center.mb-2 Câu hỏi thường gặp 
+            .d-width.border-bottom.border-4.border-danger.mx-auto.mb-4(width="30")
+            .col-xl-8.mx-auto 
+                .list-faq
+                    include mixin-faqs
+                    - tt1 = "Djokovic admits he didn't immediately isolate after positive Covid test?"
+                    - tt2 = "Fauci calls Republican senator a 'moron' under his breath during tense hearing?"
+                    - tt3 = "One of Taiwan's most advanced fighter jets crashes?"
+                    - tt4 = "Denmark's spy chief imprisoned for allegedly leaking classified information?"
+                    - tt5 = "Crypto CEO becomes one of the world's richest billionaires?"
+                    - tt6 = "UK lawmaker breaks down into tears on Parliament floor?"
+                    .accordion#accordion(aria-multiselectable="true")
+                        +accordion-item('cau1', tt1, 'active')
+                        +accordion-item('cau2', tt2, '')
+                        +accordion-item('cau3', tt3, '')
+                        +accordion-item('cau4', tt4, '')
+                        +accordion-item('cau5', tt5, '')
+                        +accordion-item('cau6', tt6, '')
+                    +pagination('my-4')
