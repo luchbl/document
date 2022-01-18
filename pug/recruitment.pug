@@ -1,0 +1,42 @@
+extends template/template
+block vars
+    - title = 'Tuyển dụng'
+    - menu_active = 'recruitment'
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5 
+            h2.tt-lg.text-center Tuyển dụng 
+            .d-width.border-bottom.border-4.border-danger.mx-auto.mb-4(width="35")
+
+            //-  mixin recruitment
+            mixin recruitment-item(tt, salary)
+                .block
+                    +a('recruitment-detail.html', 'absolute')
+                    .tt=tt
+                    .desc.d-flex.flex-wrap.align-items-center
+                        if salary 
+                            .mr-4.salary
+                                span.mr-2.far.fa-money-bill
+                                | 9 - 12 triệu
+                        else 
+                            .mr-4.salary 
+                                span.mr-2.far.fa-money-bill 
+                                | Thỏa thuận
+                        .mr-4.date.text-muted
+                            span.mr-2.far.fa-calendar-alt 
+                            | 28/02/2022
+
+            .list-recruitment.row.row-cols-1.row-cols-md-2 
+                .col: +recruitment-item('Bảo Vệ - Kiểm Soát Hàng Hóa (Làm Việc Theo Ca Tại Q5)', '7 - 9 triệu')
+                .col: +recruitment-item('Lao Động Phổ Thông Làm Việc Tại Kcx Tân Thuận Quận 7', '')
+                .col: +recruitment-item('Nhân Viên Digital Marketing Online', '')
+                .col: +recruitment-item('Nhân viên giao nhận hàng hóa fulltime', '')

@@ -1,0 +1,84 @@
+extends template/template
+block vars
+    - title = 'Home Slider V2'
+    - menu_active = 'recruitment'
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    section.home-screen
+        .container.grid-layout
+            .grid-layout-left
+                .cate-outer
+                    .tt.tt-cate.text-uppercase
+                        span.fa.fa-list.mr-2
+                        | Danh mục sản phẩm
+                    - cate1 = "Cồn Y Tế - Ethanol"
+                    - cate2 = "Kit test nhanh"
+                    - cate3 = "Y Tế Gia Đình"
+                    - cate4 = "Khẩu Trang Y Tế"
+                    - cate5 = "Máy đo nồng độ Oxi"
+                    - cate6 = "Sản phẩm khác"
+                    ul.cate-inner 
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/1.png')
+                                span.text=cate1
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/2.png')
+                                span.text=cate2
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/3.png')
+                                span.text=cate3
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/4.png')
+                                span.text=cate4
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/5.png')
+                                span.text=cate5
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/6.png')
+                                span.text=cate6
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/4.png')
+                                span.text=cate4
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/5.png')
+                                span.text=cate5
+                        li.cate-inner-item
+                            +a('products.html', 'd-flex align-items-center')
+                                span.icon: +img('icon/6.png')
+                                span.text=cate6
+            .grid-layout-right
+                .home-slider 
+                    .carousel-cell 
+                        +a('#', 'block img-slide',): +img('slider/slider_01.jpg')
+                    .carousel-cell
+                        +a('#', 'block img-slide',): +img('slider/slider_02.jpg')
+                .slide-box 
+                    .slide-box-item.block
+                        img(src='https://media.istockphoto.com/photos/diamond-on-the-water-picture-id639777488?k=20&m=639777488&s=612x612&w=0&h=f9TbqpJJjDLSoWw1zShIMIjbek7FgTZ6wpvedOVQsiM=')(class="fit-cover img-bg")
+                        .tt.text-uppercase.mb-0 Cam kết chất lượng Kim cương
+                    .slide-box-item.block
+                        img(src='https://media.istockphoto.com/photos/close-up-employee-man-hand-point-to-press-button-number-on-telephone-picture-id1127360252?k=20&m=1127360252&s=612x612&w=0&h=UtN0Da12rLSUV8JN9RNlzPO7bDD30suDBXg3vjfy26c=')(class="fit-cover img-bg")
+                        .tt.text-uppercase.mb-0 Hỗ trợ Khách hàng 24/7
+                    .slide-box-item.block
+                        img(src='https://media.istockphoto.com/vectors/pay-by-credit-card-via-electronic-wallet-wirelessly-on-phone-new-vector-id1191967417?k=20&m=1191967417&s=612x612&w=0&h=B-axQXIRN02KUJ-35r9g5sXhj1FEZCLyClpvGJyLIQY=')(class="fit-cover img-bg")
+                        .tt.text-uppercase.mb-0 Hỗ trợ thanh toán linh hoạt
+                
+    main.mainer
+        .border-top.p-6 
+            .d-width.bg-lighter(width="100%" height="800")

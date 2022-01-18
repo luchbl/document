@@ -1,0 +1,77 @@
+.carousel-main,
+.carousel-nav {
+	opacity: 0;
+	&.flickity-enabled {
+		opacity: 1;
+	}
+	.thumb-res:before {
+		display: none;
+	}
+	.carousel-cell {
+	    margin-right: 10px;
+	}
+}
+.carousel-main {
+	position: relative;
+	.flickity-button {
+	    &.previous {
+	        left: 10px;
+	    }
+	    &.next {
+	        right: 10px;
+	    }
+	}
+	.backdrop {
+		@include absolute(0,0,0,0);
+		background: rgba(#000,.7);
+		backdrop-filter: blur(3rem);
+		img {
+			box-shadow: 0 0 25px rgba(#000,.2);
+		}
+	}
+	@include support-filter-blur  {
+		.backdrop {
+			background: rgba(#000,.4);
+		}
+	}
+}
+.carousel-nav {
+	margin-top: 1rem;
+
+	.carousel-cell {
+		margin-right: 10px;
+		opacity: .4;
+		width: 70px;
+	}
+	.is-nav-selected {
+        opacity: 1;
+	}
+	.thumb-res img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+@include media-breakpoint-up(md) {
+	.carousel-nav-wrap {
+		.nav-tab-item {
+			padding: .25rem .75rem;
+		}
+	}
+}
+@include media-breakpoint-up(lg) {
+	.carousel-nav {
+		.carousel-cell {
+			width: 100px;
+		}
+	}
+	.carousel-nav-wrap {
+		.nav-tab-item {
+			padding: .25rem 1rem;
+			font-size: 14px;
+		}
+		.fa, .fab {
+			margin-bottom: 3px;
+		}
+	}
+}

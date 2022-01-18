@@ -1,0 +1,93 @@
+extends template/template
+block vars
+    - title = 'Gallery Slide'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5 
+            .row.brief.mb-4
+                .col-slide.col-md-6.mb-4
+                    .carousel-wrapper.mb-4
+                        .carousel-main
+                            .carousel-cell
+                                +a('css/skin/products/1.jpg', 'thumb-res wide mb-0')(data-fancybox="pall" style="background-image:url(css/skin/products/1.jpg)")
+                                    .backdrop: +img('products/1.jpg')
+                            .carousel-cell
+                                +a('css/skin/products/2.jpg', 'thumb-res wide mb-0')(data-fancybox="pall" style="background-image:url(css/skin/products/2.jpg)")
+                                    .backdrop: +img('products/2.jpg')
+                            .carousel-cell
+                                +a('css/skin/products/3.jpg', 'thumb-res wide mb-0')(data-fancybox="pall" style="background-image:url(css/skin/products/3.jpg)")
+                                    .backdrop: +img('products/3.jpg')
+                            .carousel-cell
+                                +a('css/skin/products/4.jpg', 'thumb-res wide mb-0')(data-fancybox="pall" style="background-image:url(css/skin/products/4.jpg)")
+                                    .backdrop: +img('products/4.jpg')
+                        .carousel-nav-wrap
+                            .carousel-nav
+                                - n = 2
+                                .carousel-cell
+                                    .thumb-res.wide.mb-0.is-nav-selected: +img('products/1.jpg')(class="fit-cover")
+                                while n <= 4
+                                    .carousel-cell
+                                        .thumb-res.wide.mb-0: +img('products/'+n+++'.jpg')(class="fit-cover")
+                        script. 
+                            $(document).ready(function() {
+                                if ($('.carousel-nav').length || $('.carousel-main').length) {
+                                    $('.carousel-main').flickity({
+                                        contain: true,
+                                    });
+                                    $('.carousel-nav').flickity({
+                                        asNavFor: '.carousel-main',
+                                        contain: true,
+                                        pageDots: false,
+                                        prevNextButtons: false,
+                                    });
+                                }
+                            })
+                            
+                .col-info.col-md-6.mb-4.pl-xl-4
+                    h2.tt-lg.tt-pd Tai nghe Bluetooth N95 chính hãng
+                    .msp.text-muted Mã SP: 0123455
+                    .desc.mb-4 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est nobis ratione aut dolores modi atque repudiandae libero velit, delectus dolorum fuga vel sunt fugit repellendus dolorem ab veniam cupiditate.
+                    .button-group
+                        button.btn.btn-outline-primary.px-5 Add to Cart
+                        button.btn.btn-danger.px-5 Buy Now
+            .related-post.py-5 
+                .tt-sm.mb-3 Sản phẩm khác
+                .carousel-c2md4 
+                    .carousel-cell 
+                        .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
+                        .info 
+                            .tt Lorem ipsum dolor sit amet consectetur adipisicing
+                            .text-muted.lh-base Msp: 01231912
+                    .carousel-cell 
+                        .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
+                        .info 
+                            .tt Lorem ipsum dolor sit amet consectetur adipisicing
+                            .text-muted.lh-base Msp: 01231912
+                    .carousel-cell 
+                        .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
+                        .info 
+                            .tt Lorem ipsum dolor sit amet consectetur adipisicing
+                            .text-muted.lh-base Msp: 01231912
+                    .carousel-cell 
+                        .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
+                        .info 
+                            .tt Lorem ipsum dolor sit amet consectetur adipisicing
+                            .text-muted.lh-base Msp: 01231912
+                    .carousel-cell 
+                        .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
+                        .info 
+                            .tt Lorem ipsum dolor sit amet consectetur adipisicing
+                            .text-muted.lh-base Msp: 01231912
+
+append scripts 
+    +fancybox()

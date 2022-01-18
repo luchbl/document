@@ -1,0 +1,25 @@
+extends template/template
+block vars
+    - title = 'Docs'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5
+            ul.col-6.mx-auto.fs-18
+                li: a.block(href="feedback.html") Feedback
+                li: a.block(href="gallery-slide.html") Gallery Slide Products
+                li: a.block(href="home-slider2.html") Home Slider Style 2
+                li: a.block(href="home-slider3.html") Home slider style 3
+                li: a.block(href="nav-responsive.html") Nav tab responsive drag
+                li: a.block(href="partner-logo.html") Logo carousel 
+                li: a.block(href="recruitment.html") Tuyển dụng
+            

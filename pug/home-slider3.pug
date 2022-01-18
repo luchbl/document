@@ -1,0 +1,49 @@
+extends template/template
+block vars
+    - title = 'Home Slider V3'
+    - menu_active = 'recruitment'
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    .main-slider
+        .container
+            .home-slider
+                .carousel-cell 
+                    +a('#', 'absolute')
+                    .img-slide: +img('slider/slider_01.jpg')
+                    .container.absolute.d-flex.text-left
+                        .text-slider
+                            .tt-lg Reusable JavaScript UI Component Library
+                            .desc Beautiful, modern overlay windows for presenting various types of media
+                .carousel-cell 
+                    +a('#', 'absolute')
+                    .img-slide: +img('slider/slider_01.jpg')
+                    .container.absolute.d-flex.text-center
+                        .text-slider
+                            .tt-lg Reusable JavaScript UI Component Library
+                            .desc Beautiful, modern overlay windows for presenting various types of media
+                .carousel-cell 
+                    +a('#', 'absolute')
+                    .img-slide: +img('slider/slider_01.jpg')
+                    .container.absolute.d-flex.text-right
+                        .text-slider
+                            .tt-lg Reusable JavaScript UI Component Library
+                            .desc Beautiful, modern overlay windows for presenting various types of media
+            .home-banner
+                figure.home-banner-item
+                    +a('#', 'thumb-res')
+                        img.fit-cover(src="https://cdn.pixabay.com/photo/2015/07/28/21/58/student-865073__340.jpg" alt="")
+                figure.home-banner-item
+                    +a('#', 'thumb-res')
+                        img.fit-cover(src="https://cdn.pixabay.com/photo/2015/08/19/05/17/large-895567__340.jpg" alt="")
+
+    main.mainer
+        .border-top.p-6 
+            .d-width.bg-lighter(width="100%" height="800")

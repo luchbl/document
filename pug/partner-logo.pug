@@ -1,0 +1,37 @@
+extends template/template
+block vars
+    - title = 'Khách hàng & Đối tác'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5 
+            .carousel-logo 
+                .carousel-cell
+                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
+                .carousel-cell
+                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
+                .carousel-cell
+                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
+                .carousel-cell
+                    +a('#', 'thumb-res wide mb-0'): +img('logo.png')
+
+append scripts 
+    script. 
+        $('.carousel-logo').flickity({
+            contain: true,
+            //cellAlign: 'left',
+            groupCells: '100%',
+            pageDots: false,
+            autoPlay: 3000,
+            pauseAutoPlayOnHover: false,
+            wrapAround: true,
+        });

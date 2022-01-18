@@ -1,0 +1,114 @@
+extends template/template
+block vars
+    - title = 'Document'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5 
+            .tt-sm.mb-4.text-capitalize.text-primary.text-center Menu Responsive with Drag X use jQuery (+ theme line)
+            .nav-responsive#nav-responsive.theme-line
+                .nav-nowrap.nav-scrollx#nav-scrollx
+                    +a('#', 'nav-item', 'International')
+                    +a('#', 'nav-item', 'Brurch Fours')
+                    +a('#', 'nav-item active', 'Branch Detouch')
+                    +a('#', 'nav-item', 'Haward Browse')
+                    +a('#', 'nav-item', 'Lands Hawings')
+                    +a('#', 'nav-item', 'Garage Bluetend')
+                    +a('#', 'nav-item', 'International')
+                    +a('#', 'nav-item', 'Brurch Fours')
+                    +a('#', 'nav-item', 'Branch Detouch')
+                    +a('#', 'nav-item', 'Haward Browse')
+                    +a('#', 'nav-item', 'Lands Hawings')
+                    +a('#', 'nav-item', 'Garage Bluetend')
+                    +a('#', 'nav-item', 'International')
+            .content.p-5.rounded.text-center.bg-lighter.my-45
+                p: b Explaind 
+                p.fs-18
+                    | 1. Nếu list dài quá container thì container add class d-flex để cho mục active sẽ trôi lên đầu list 
+                    br
+                    | 2. Nếu list ngắn hơn container thì container mặc định là display: block để các item canh giữa
+            
+            .my-4.tt-sm.mb-4.text-capitalize.text-primary.text-center theme default
+            .nav-responsive#nav-responsive
+                .nav-nowrap.nav-scrollx#nav-scrollx
+                    +a('#', 'nav-item', 'International')
+                    +a('#', 'nav-item', 'Brurch Fours')
+                    +a('#', 'nav-item active', 'Branch Detouch')
+                    +a('#', 'nav-item', 'Haward Browse')
+                    +a('#', 'nav-item', 'Lands Hawings')
+                    +a('#', 'nav-item', 'Garage Bluetend')
+                    +a('#', 'nav-item', 'International')
+                    +a('#', 'nav-item', 'Brurch Fours')
+append scripts 
+    script. 
+        //- total width item to align center item or left
+        var children = document.getElementById('nav-scrollx').children;
+        var totalWidth = 0;
+        for (var i = 0; i < children.length; i++) {
+            totalWidth += children[i].offsetWidth;
+        }
+        if (totalWidth > $('#nav-responsive').outerWidth()) {
+            $('#nav-scrollx').addClass('d-flex');
+        } else {
+            $('#nav-scrollx').removeClass('d-flex');
+        }
+        //- Set height for nav
+        window.onload = function() {
+            var nav_height = $('#nav-responsive .nav-item').outerHeight(true);
+            $('#nav-responsive').height(nav_height);
+        }
+
+        //- Drag Horizontal
+        const slider = document.querySelector(".nav-scrollx");
+        const preventClick = (e) => {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+        }
+        let isDown = false;
+        let isDragged = false;
+        let startX;
+        let scrollLeft;
+        slider.addEventListener("mousedown", e => {
+            isDown = true;
+            slider.classList.add("active");
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener("mouseleave", () => {
+            isDown = false;
+            slider.classList.remove("active");
+        });
+        slider.addEventListener("mouseup", (e) => {
+            isDown = false;
+            const elements = document.querySelectorAll("a");
+            if (isDragged) {
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].addEventListener("click", preventClick);
+                }
+            }
+            else {
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].removeEventListener("click", preventClick);
+                }
+            }
+            slider.classList.remove("active");
+            isDragged = false;
+        });
+        slider.addEventListener("mousemove", e => {
+            if (!isDown) return;
+            isDragged = true;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+            //- console.log(walk);
+        });
