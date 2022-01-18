@@ -1,0 +1,102 @@
+extends template/template
+block vars
+    - title = 'Tài khoản'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = ''
+    - login = true
+
+block mainer
+    main.mainer
+        .container
+            .block-sidebar.user-container
+                .sidebar 
+                    .sidebar-pane
+                        .tt-xs.fw-normal.mb-3 Hi, <b>Nguyễn Văn A</b>
+                        ul.menu-dashboard 
+                            li.menu-item.active 
+                                +a('user-account.html') 
+                                    span.icon.far.fa-user-circle
+                                    | Thông tin cá nhân
+                            li.menu-item 
+                                +a('user-password.html') 
+                                    span.icon.far.fa-lock
+                                    | Đổi mật khẩu
+                            li.divider
+                            li.menu-item 
+                                +a('user-invoid.html') 
+                                    span.icon.far.fa-lock
+                                    | Đơn hàng
+                            li.menu-item 
+                                +a('index.html') 
+                                    span.icon.far.fa-sign-out
+                                    | Đăng xuất
+
+                    .sidebar-pane 
+                        .tt-xs.mb-3 Thông tin liên hệ
+                        .picon 
+                            span.far.fa-envelope 
+                            | signbrowse@gmail.com
+                        .picon 
+                            span.far.fa-phone.fa-flip-horizontal 
+                            | 0323 456 789
+                        .picon 
+                            span.far.fa-map-marker-alt 
+                            | 212 Nguyễn Đình Chiểu, Phường 14, Quận 5, Tp. Hồ Chí Minh
+                .mainbody
+                    form.form-validate.mb-5
+                        .tt-sm.mb-3 Thông tin của bạn
+                        .form-x-shorter
+                            .row.mb-3
+                                label.col-sm-3.col-form-label
+                                    | Ảnh đại diện
+                                    small.block.text-muted Dung lượng < 1MB. Định dạng hỗ trợ: jpg, jpeg, png, gif.
+                                .col-sm-9
+                                    .avatar.avatar-lg.rounded-circle.mb-2: img.fit-cover.rounded-circle(src='https://cdn.pixabay.com/photo/2014/03/29/09/17/cat-300572__340.jpg' alt="")
+                                    .form-file
+                                        input.form-file(type="file")
+                            .row.mb-3.row.mb-3
+                                label.col-sm-3.col-form-label Họ & Tên
+                                .col-sm-9
+                                    input.form-control(type="text" value="Nguyễn Van A" required)
+                            .row.mb-3.row.mb-3
+                                label.col-sm-3.col-form-label Email
+                                .col-sm-9
+                                    input.form-control(type="text" value="signbrowse@gmail.com" required)
+                            .row.mb-3
+                                label.col-sm-3.col-form-label Điện thoại
+                                .col-sm-9
+                                    input.form-control(type="tel" placeholder="0123 456 789")
+                            .row.mb-3
+                                label.col-sm-3.col-form-label Tỉnh/Thành phố
+                                .col-sm-9
+                                    +select_tinh()
+                            .row.mb-3
+                                label.col-sm-3.col-form-label Quận/Huyện
+                                .col-sm-9
+                                    +select_quan()
+                            .row.mb-3
+                                label.col-sm-3.col-form-label Phường/Xã
+                                .col-sm-9
+                                    +select_phuong()
+                            .row.mb-3
+                                label.col-sm-3.col-form-label Địa chỉ
+                                .col-sm-9
+                                    input.form-control(type="text" placeholder="Số nhà, Tên đường" required)
+                            .row.mb-3
+                                label.col-sm-3.col-form-label
+                                .col-sm-9
+                                    button.btn.btn-danger.px-5(type="submit") Cập nhật
+
+                    .nav-responsive#nav-responsive
+                        .nav-nowrap.nav-scrollx#nav-scrollx
+                            +a('#', 'nav-item', 'Tất cả')
+                            +a('#', 'nav-item', 'Chờ xác nhận')
+                            +a('#', 'nav-item', 'Đang giao')
+                            +a('#', 'nav-item', 'Đã hoàn thành')
+
+append scripts 
+    +parsley()
