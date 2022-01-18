@@ -14,7 +14,7 @@ append breadcrumb
 block mainer
     main.mainer
         .py-6.block-bg 
-            .container 
+            .container  
                 .row.row-cols-2.row-cols-md-4.g-3.g-lg-4 
                     .col
                         .thumb-res.wide: +img('theme/thumb@16x9.jpg')(class="fit-cover")
@@ -53,6 +53,12 @@ block mainer
 
 append scripts 
     script. 
+        $('.carousel-services').flickity({
+            pageDots: false,
+            cellAlign: "left",
+            groupCell: "100%",
+            contain: true,
+        });
         (function($) {
             $('.carousel-feedback').flickity({
                 pageDots: false,

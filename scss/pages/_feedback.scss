@@ -125,3 +125,21 @@
         }
     }
 }
+
+
+
+
+
+.carousel-services {
+    .carousel-cell {
+        width: 90%;
+        margin-right: 1.75rem;
+    }
+}
+@include media-breakpoint-up(md) {
+    .carousel-services {
+        .carousel-cell {
+            width: 20%;
+        }
+    }
+}

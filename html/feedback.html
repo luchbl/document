@@ -303,6 +303,12 @@
     <script src="css/plugins/wow.min.js"></script>
     <script src="css/js/main.min.js"></script>
     <script>
+      $('.carousel-services').flickity({
+          pageDots: false,
+          cellAlign: "left",
+          groupCell: "100%",
+          contain: true,
+      });
       (function($) {
           $('.carousel-feedback').flickity({
               pageDots: false,
