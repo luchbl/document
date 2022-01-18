@@ -1,9 +1,6 @@
 .price {
     font-weight: 600;
     color: $danger;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     &-sale {
         margin-right: .25rem;
     }
@@ -11,9 +8,44 @@
         color: #929299;
         font-weight: 400;
         font-size: 84%;
+        margin-right: 10px;
     }
     u, del {
         margin-left: 2px;
+    }
+    .saleoff {
+        color: #fff;
+        background: #F6921E;
+        position: relative;
+        font-size: 13px;
+        font-weight: 500;
+        display: inline-block;
+        vertical-align: 2px;
+        font-weight: 400;
+        line-height: 18px;
+        height: 18px;
+        padding: 0 3px;
+        letter-spacing: -.25px;
+        &:before,
+        &:after {
+            content: '';
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            width: 5px;
+            @include absolute(0,null,0);
+        }
+        &:before {
+            background-image: url('skin/theme/coupon.svg');
+            background-position: right center;
+            right: 100%;
+            margin-right: -1px;
+        }
+        &:after {
+            background-image: url('skin/theme/coupon-r.svg');
+            background-position: left center;
+            left: 100%;
+            margin-left: -1px;
+        }
     }
 }
 .block-heading {
