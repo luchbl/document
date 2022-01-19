@@ -1,0 +1,27 @@
+extends template/template
+block vars
+    - title = 'PDF Fancybox'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = 'banner.jpg'
+    - login = false
+
+append breadcrumb 
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container.py-5  
+            .text-center
+                +a('pdfjs/web/viewer.html?file=../../pdftest.pdf', 'fs-20', 'Popup PDF')(data-fancybox data-type="pdf")
+                .text-left.fs-18
+                    | Plugin bao gồm 
+                    br
+                    | - 1 folder pdfjs: chứa các file cần thiết để chạy 
+                    br
+                    | - file .pdf để ở đâu thì thay đổi đường dẫn trong a href, sau dấu =
+                    br
+                    | vd: a href="pdfjs/web/viewer.html?file="!{'<b><đường dẫn tới file .pdf từ trong folder pdfjs/web>.pdf</b>'}"
+                +fancybox()

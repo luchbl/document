@@ -1,10 +1,4 @@
-# Branch products
-- products.scss
-- products-detail.scss
-- cart.scss
+# Pdf viewer
 
-- mixin-products.pug
-- products.pug
-- products-detail.pug
-- cart.pug
-- cart-done.pug
+- folder pdfjs
+- fancybox
