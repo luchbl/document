@@ -32,7 +32,7 @@ html.menu-open {
 	font-size: 1rem;
 
 	&-header {
-		padding: 1.5rem 1rem;
+		padding: 1rem;
 		position: relative;
 		#close-menu {
 			margin-right: -.25rem;
@@ -140,122 +140,7 @@ html.menu-open {
 		}
 	}
 }
-@include media-breakpoint-up(lg) {
-	.btn-menu,
-	.menu-header,
-	.menu-contact,
-	.menu-footer {
-		display: none !important;
-	}
-	.navigate-dym {
-        max-width: 100%;
-        background-color: #f9f9f9;
-		position: static;
-		height: auto;
-		overflow: visible;
-		visibility: visible;
-		transform: none;
-		box-shadow: none;
 
-		&.stick {
-			position: fixed;
-			top: 0;
-		}
-	}
-	.menu {
-		max-width: 100%;
-		margin: 0 auto;
-        padding: 0 $grid-gutter-width / 2;
-
-        &-body {
-        	position: static;
-			top: 0;
-			overflow: visible;
-			padding: 0;
-			transform: none !important;
-			opacity: 1 !important;
-        }
-        &-slide {
-        	padding: 0;
-        	display: flex;
-
-        	.i-drop,
-        	.menu-icon {
-        		display: none !important;
-        	}
-        	> li > a {
-        		padding: var(--menu-padding-y, .75rem) var(--menu-padding-x, 1rem);
-        	}
-        	li, ul {
-        		position: relative;
-                padding: 0;
-        	}
-        	li:hover > ul {
-        		visibility: visible;
-        		transform: none;
-        		opacity: 1;
-        	}
-        	ul {
-        		@include absolute(100%);
-        		z-index: 11;
-        		background: #fff;
-        		padding: 0;
-        		margin: 0;
-        		transform: translateX(-10px);
-        		display: block;
-        		min-width: 200px;
-        		white-space: nowrap;
-        		border-top: 2px solid $primary;
-                opacity: 0;
-                visibility: hidden;
-                transition: transform 0.3s ease, opacity 0.2s ease;
-                box-shadow: 0 10px 25px -5px rgba(#000,.25);
-
-                a {
-                	padding: .5rem 1.5rem;
-                }
-                li {
-                	border: none !important;
-                }
-                li:hover > a {
-                	background: $primary;
-                	color: #fff;
-                }
-                ul {
-                	top: 0;
-                	left: 100%;
-                	border: none;
-                	a {
-                		padding-top: .5rem;
-        		        padding-bottom: .5rem;
-                	}
-                }
-        	}
-        	// ul last child
-        	> li:nth-child(7),
-        	> li:nth-child(8) {
-        		> ul {
-        			right: 0;
-        		}
-        		> ul ul {
-        			right: 100%;
-        			left: auto;
-        		}
-        	}
-        }
-	}
-}
-@include media-breakpoint-up(xl) {
-	.menu {
-		--menu-padding-x: 1.5rem;
-		max-width: 1200px;
-	}
-}
-@include media-breakpoint-up(xxl) {
-	.menu {
-		max-width: map-get($container-max-widths, "xxl");
-	}
-}
 
 // Menu mega
 @import "menu-mega";

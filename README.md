@@ -1,10 +1,8 @@
-# Branch products
-- products.scss
-- products-detail.scss
-- cart.scss
+# Header Option 2
 
-- mixin-products.pug
-- products.pug
-- products-detail.pug
-- cart.pug
-- cart-done.pug
+- header.pug
+- menu.pug
+#
+- Header.scss
+- Menu.scss
+- Form-searh

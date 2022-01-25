@@ -1,0 +1,35 @@
+extends template/template
+block vars
+    - title = 'Header V2'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = ''
+    - home_slider = false
+    - banner_top = false
+    - banner_image = 'banner.jpg'
+    - login = false
+
+block layers 
+    section.home-banner.block-bg
+        .container 
+            .thumb-res.wide-sm: img.fit-cover(src="https://cdn.pixabay.com/photo/2018/07/10/07/56/business-3528035_960_720.jpg" alt="")
+            .absolute.d-flex.align-items-center
+                .home-banner-text.px-5.mw-md-50.text-white
+                    h1.tt-xl.text-white Graphic Resources for Everyone
+                    .desc.mt-4 Với hơn 10 năm kinh nghiệm trong lĩnh vực thiết kế website. BizMaC cam kết mang đến cho Quý khách sự an tâm tuyệt đối và hài lòng cao nhất
+                    .button.mt-4: button.btn.px-5.btn-primary Get Started
+block mainer    
+    main.mainer
+        .container.py-5 
+            .tt-md.text-center.mb-2 All Products
+            .row.row-cols-2.row-cols-md-4.row-cols-lg-5.g-3.g-lg-4
+                .col
+                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
+                .col
+                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
+                .col
+                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
+                .col
+                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
+                .col
+                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")

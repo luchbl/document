@@ -1,169 +1,158 @@
 .form-search {
-	@include absolute(0,0,0,0);
-	padding: 8px 15px;
-	background: #fafafa;
+	@include absolute(0,0,null,0);
 	z-index: 981;
-	display: flex;
 	visibility: hidden;
 	opacity: 0;
-	transition: transform 0.3s ease, opacity 0.35s ease;
-	transform: scale(.9);
-    align-items: center;
+	transition: opacity .5s ease;
     
+    .form-group {
+    	background: #fff;
+    	border-radius: 0 0 1rem 1rem;
+    	padding: 1px;
+    }
+    &-control {
+    	margin: .75rem .5rem;
+    	position: relative;
+    }
 	.form-control {
-		border-width: 0;
-		border-radius: 0;
-		font-size: 16px;
-		padding: 0 40px 0 10px;
-		height: 40px;
-		background: transparent;
+		border: none;
+		background: #f9f9f9;
+        height: 46px;
+        padding-left: 1rem;
+        padding-right: 2.5rem;
 		&:focus {
 			box-shadow: none;
-			border-color: $primary;
 			@include placeholder-focus;
 		}
 	}
-	.form-group {
-		flex: 1 1 auto;
-		position: static;
-	}
-	.fa-times {
-		padding: 0 0 2px;
-		font-weight: 400;
+	.btn-submit {
+		height: 46px;
+		@include absolute(0,0);
+		padding: $input-padding-y $input-padding-x;
+		width: 40px;
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23777777" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center center;
+		background-size: 16px;
+		line-height: 1.5;
 		border: none;
-		background: transparent !important;
-		width: 30px;
-		height: 35px;
-		text-align: center;
-		&:before {
-			content: '\f053';
-		}
-		&:hover,
-		&:focus {
-			background: transparent;
-		}
 	}
-	.addon.fa-search,
-	.icon-submit {
-		@include absolute(0,0,0);
-		opacity: .7;
-		border: none;
-		background-color: transparent;
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		padding: 0 8px;
-		color: $dark;
-		text-shadow: none;
+	.close-search {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		margin: .5rem auto;
+		display: block;
+		font-weight: 300;
+		font-size: 18px;
+		background: rgba(#fff,.2);
+		color: #fff;
 	}
-	.open,
 	&.active {
-		visibility: visible;
-		transform: none;
 		opacity: 1;
-		.dropdown-sug {
-			height: 65vh;
-			overflow-y: auto;
-			transition: height .75s ease 0.1s;
-		}
+		visibility: visible;
 	}
-
-	#close-search {
-		margin-left: .5rem;
-		padding-left: 1rem;
-		border-left: 1px solid #eee;
-	}
-
 	#searchwait {
 		@include absolute(7px, 35px);
 		width: 25px;
 		height: 25px;
 		background: url('skin/loading.gif') no-repeat center center;
 	}
-}
-.dropdown-sug {
-	@include absolute(100%,0,null,0);
-	background: #fff;
-	z-index: 777;
-    border-radius: 0 0 10px 10px;
-	overflow: hidden;
-	height: 0;
 
-	.item {
-		display: inline-block;
-		width: 100%;
-		margin: 0 !important;
-		padding: .75rem 1.5rem;
-		position: relative;
-		color: $color-body;
-		border-top: 1px solid #f0f0f0;
-	}
-	.thumb {
-		width: 45px;
-		height: 45px;
-		float: left;
-		margin: 3px 12px 0 0;
-	}
-	.tt {
-		margin: 0;
-		font-weight: 500;
-		@include ellips(2);
-	}
-	.price {
-		color: $danger;
-		font-weight: 500;
-		&-sale {
-			margin-right: 5px;
+	// suggest
+	&-suggest {
+	    background: #fff;
+	    border-radius: 0 0 12px 12px;
+	    z-index: 77;
+	    overflow: hidden;
+	    .cap {
+			padding: .5rem 1rem;
+			color: #888;
 		}
-		&-origin {
-			font-size: 85%;
-			color: $gray-600;
-		}
-	}
-	img {
-		border-radius: 4px;
-	}
-	.text-not {
-		padding: .75rem 1.5rem;
-		font-style: italic;
-		color: #999;
-		border-top: 1px solid #eee;
-	}
-	.item:hover {
-		background: #f9f9f9;
-		.info {
-			color: $primary;
-		}
+	    &-item {
+	    	position: relative;
+	    	display: flex;
+	    	align-items: center;
+	    	padding: 1rem;
+	    	border-top: 1px solid #eee;
+	    	&.more {
+	    		justify-content: center;
+	    	}
+	    }
+	    .thumb {
+	    	width: 70px;
+	    	height: 70px;
+	    	flex: 0 0 auto;
+	    	margin: 0 1rem 0 0;
+	    }
+	    .tt {
+	    	margin-bottom: .125rem;
+	    	@include ellips(2);
+	    	font-weight: 500;
+	    }
+	    .price {
+	    	color: #e00;
+	    	font-weight: 600;
+	    	&-origin {
+	    		color: #999;
+	    		font-weight: 400;
+	    		font-size: 90%;
+	    		margin-left: .25rem;
+	    		vertical-align: 1px;
+	    	}
+	    }
 	}
 }
-@mixin form-search-static($width: 300px, $bg:#f8f8f8, $border:1px solid rgba(#000,.1), $radius: 4px) {
-	position: relative;
-	padding: 0;
-	margin: 0;
-	visibility: visible;
-	transform: none;
-	transition: none;
-	opacity: 1;
-	background: transparent;
-	.toggle-form-search {
-		display: none;
-	}
-	.form-control,
-	.form-select {
-        border: $border;
-        background: $bg;
-        border-radius: $radius;
-        width: $width;
-        height: 44px;
-        &:focus {
-        	border-color: $secondary;
-        	background: #fff;
-        }
-	}
-	.addon.fa-search {
-		padding: 0 14px;
-	}
+@include media-breakpoint-up(md) {
+	#search-toggle,
 	#close-search {
 		display: none;
+	}
+	.form-search {
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+		flex: 1 1 auto;
+		padding-left: 3rem;
+		z-index: 10;
+		.form-group {
+			max-width: 600px;
+			margin-left: auto !important;
+			margin-right: auto !important;
+			padding: 0;
+		}
+		.form-control {
+			border: 1px solid transparent;
+		}
+		&-control {
+			margin: 0;
+		}
+		&-suggest {
+			@include absolute(100%,0,null,0);
+			border: 1px solid #ddd;
+			max-height: 0;
+			opacity: 0;
+			margin-top: -1px;
+			transition: max-height 0.5s ease;
+			box-shadow: 0 8px 24px -8px rgba(#000,.1);
+			&::-webkit-scrollbar {
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba(#000,.1);
+			}
+		}
+		&.focus {
+			.form-control {
+				border-color: #ddd;
+				border-radius: 8px 8px 0 0;
+			}
+			.form-search-suggest {
+				max-height: 80vh;
+				overflow-y: auto;
+				opacity: 1;
+			}
+		}
 	}
 }

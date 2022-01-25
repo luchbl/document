@@ -2,6 +2,10 @@ block menu
     nav.navigate-dym#navigate
         .menu
             .menu-header
+                .language.mb-2.d-flex.justify-content-end.align-items-center
+                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") English
+                    span.line
+                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") Tiếng việt
                 .d-flex.align-items-center.justify-content-between
                     if login 
                         .d-flex.align-items-center.us 
@@ -11,10 +15,8 @@ block menu
                         +a('login.html', 'btn flex-fill btn-outline-primary mr-2', 'Đăng nhập')
                         +a('login.html', 'btn flex-fill btn-primary', 'Đăng ký')
                     //- button.btn-close#close-menu(type="button")
-                .language.mt-2.d-flex.justify-content-end.align-items-center
-                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") English
-                    span.mx-1 |
-                    a.btn.btn-sm.text-desc(href="#" title="" target="_self") Tiếng việt
+                .form-search
+                    
             .menu-body
                 ul.menu-slide
                     li(class=(menu_active=='index' ? 'active' : ''))
