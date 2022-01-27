@@ -13,4 +13,18 @@ block breadcrumb
     +breadcrumb({}, title)
 block mainer
     main.mainer
-        .container 
+        .container.py-6
+            .text-center
+                h2.tt-xl.text-primary Our Company
+                .d-width.border-bottom.border-danger.border-4.mx-auto.mb-4(width="40")
+                .col-lg-8.mx-auto.fs-18.desc.mb-45 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis temporibus fuga quia illo autem commodi doloribus, ab architecto a, dicta quisquam consequuntur recusandae deleniti animi quibusdam magnam consectetur iure eum!
+            .row.row-cols-1.row-cols-md-3.g-3.g-md-4
+                .col
+                    .block 
+                        .thumb-res.wide.mb-0: img.fit-cover(src="https://cdn.pixabay.com/photo/2019/01/24/22/12/flower-3953461_960_720.jpg")
+                .col
+                    .block 
+                        .thumb-res.wide.mb-0: img.fit-cover(src="https://cdn.pixabay.com/photo/2018/03/12/06/03/wedding-3218833_960_720.jpg")
+                .col
+                    .block 
+                        .thumb-res.wide.mb-0: img.fit-cover(src="https://cdn.pixabay.com/photo/2014/05/21/15/52/camera-349943_960_720.jpg")

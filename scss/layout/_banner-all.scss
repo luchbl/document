@@ -2,21 +2,26 @@
     position: relative;
     z-index: 11;
     background-color: #f2f2f2;
-    background-image: url('skin/slider/banner.jpg');
-
+    &:before {
+        content: '';
+        @extend %absolute-all;
+        background-color: rgba(#000,.15);
+    }
     .container {
-        min-height: var(--banner-height, 110px);
+        height: var(--banner-height, 50vh);
+        min-height: 300px;
         position: relative;
         z-index: 10;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 60px;
     }
     .text-banner {
         text-align: center;
     }
     #{$tt-all} {
-        color: $dark;
+        color: white;
     }
     .breadcrumb {
         padding: 0;
@@ -24,9 +29,12 @@
 }
 .breadcrumb {
     justify-content: center;
-    color: $body-color;
+    color: white;
     li {
         margin: 0;
+        + li:before {
+            color: inherit !important;
+        }
     }
     .active, a {
         color: inherit;
@@ -37,12 +45,15 @@
 }
 @include media-breakpoint-up(md) {
     .banner-lg {
-        --banner-height: 120px;
+        @include fixed(0,0,null,0);
+    }
+    .mainer {
+        margin-top: 50vh;
+        z-index: 12;
     }
 }
 @include media-breakpoint-up(xl) {
     .banner-lg {
-        --banner-height: 150px;
-        --tt-md: calc(20px + 1.05vw);
+        --tt-md: calc(1.5rem + 1.05vw);
     }
 }
