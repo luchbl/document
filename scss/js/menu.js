@@ -1,9 +1,9 @@
 (function($) {
     // Menu @v2
     $('#menu-toggle').click(function() {
-        $('#navigate').toggleClass('active');
-        $('body').toggleClass('menu-open');
-        $('#menu-backdrop').fadeToggle(200);
+        $('#navigate').addClass('active');
+        $('body').addClass('menu-open');
+        $('#menu-backdrop').fadeIn(200);
         return false;
     });
     // Menu-slide

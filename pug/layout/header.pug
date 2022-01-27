@@ -1,58 +1,18 @@
 block header
     header.header#header
-        nav.nav-top 
-            .container-fluid.d-flex.flex-wrap.justify-content-between
-                .nav-top-left
-                    .text-slogan
-                        span.far.fa-map-marker-alt.mr-2 
-                        | 124 Nguyen Dinh Chieu, Phuong 6, Quan 3, Tp.HCM
-                .nav-top-right.d-flex.align-items-center
-                    .nav-top-item
-                        +mail_a('nav-top-link')
-                            span.far.fa-envelope.mr-2 
-                            +mail_text()
-                    .nav-top-item
-                        +phone_a('nav-top-link')
-                            span.far.fa-phone.fa-flip-horizontal.mr-2 
-                            +phone_text()
-                    .nav-top-item.language.d-flex.align-items-center
-                        +a('#', 'nav-top-link', 'VI')
-                        span.line
-                        +a('#', 'nav-top-link', 'EN')
         .container-fluid.d-flex
             a.logo(href="index.html" title="" alt=""): img(src="css/skin/logo.png" alt="")
-            .header-right.d-flex
+            .header-right.d-flex 
                 .form-search#form-search
-                    .form-group.m-0
-                        .form-search-control
-                            input(type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm")
-                            input(type="submit" class="btn-submit" value="")
-                        .form-search-suggest
-                            .cap.fst-italic Kết quả tìm kiếm sản phẩm 
-                            .form-search-suggest-item 
-                                +a('product-detail.html', 'absolute')
-                                .tt Bộ đồ bảo hộ chống Covid-19 WHO
-                            .form-search-suggest-item
-                                +a('product-detail.html', 'absolute')
-                                .thumb: +img("products/1.jpg")
-                                .info
-                                    .tt De Ville Prestige Automatic Men's Watch 424.13.40.21.03.002
-                                    .price
-                                        span.price-sale 120.000đ
-                                        del.price-origin 170.000đ
-                            .form-search-suggest-item
-                                +a('product-detail.html', 'absolute')
-                                .thumb: +img("products/2.jpg")
-                                .info
-                                    .tt De Ville Automatic Silver Dial Men's Watch 424.13.40.20.02.006
-                                    .price
-                                        span.price-sale 120.000đ
-                            .form-search-suggest-item.more
-                                +a('products.html', 'block text-danger')
-                                    | Xem thêm kết quả
-                                    span.ml-1.far.fa-chevron-right
-                    button.close-search#close-search: span.far.fa-times
-                button.search-toggle#search-toggle(role="button"): span.far.fa-search
+                    .form-search-group 
+                        input(type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm")
+                        input(type="submit" class="btn-submit" value="")
+                .header-right-item.search.align-items-center
+                    button.search-toggle#search-toggle
+                .header-right-item.language.d-flex.align-items-center
+                    +a('#', 'lang', 'VI')
+                    span.line
+                    +a('#', 'lang', 'EN')
                 button#menu-toggle.btn-menu.fa.fa-bars(role="button")
                     b Menu
         block menu

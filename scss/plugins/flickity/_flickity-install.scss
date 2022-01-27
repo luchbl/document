@@ -136,31 +136,34 @@
 
 // Home slider
 .home-slider {
+	&,
+	.carousel-cell,
+	.flickity-viewport {
+		height: 100vh;
+	}
     .carousel-cell {
         width: 100%;
     }
-    .img-slide {
-    	@extend %bg-image;
-        padding-bottom: var(--slide-height, 220px);
-        img {
-        	@extend %absolute-all;
-        	width: 100%;
-        	height: 100%;
-        	object-fit: cover;
-        }
-    }
     .flickity-button {
+    	--button-size: 50px;
     	background-color: rgba(#000,.25);
     	opacity: 0;
     	box-shadow: none;
+    	border-radius: 0;
+    	top: auto;
+    	left: auto;
+    	z-index: 5;
+    	opacity: 1;
     	&:before {
     		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
     	}
     	&.previous {
-    		left: .75rem;
+    		right: 0;
+    		bottom: var(--button-size);
+    		margin-bottom: 1px;
     	}
     	&.next {
-    		right: .75rem;
+    		right: 0;
     	}
     	&:hover {
     		background-color: $primary;
@@ -169,42 +172,20 @@
     &:hover .flickity-button {
     	opacity: 1;
     }
-    .container.d-flex {
-    	align-items: center;
-    }
     .text-center {
     	justify-content: center;
     }
     .text-right {
     	justify-content: flex-end;
     }
-    .text-slider {
-    	width: 100%;
-    	max-width: var(--text-max-width, 380px);
-    	overflow: hidden;
-    }
-    --tt-lg: 1.5rem;
-    .tt-lg {
-        margin: 0;
-        font-weight: 600;
-    }
-    .desc {
-    	font-size: var(--desc-font-size, .9375rem);
-    	@include ellips(4);
-    }
-    .desc,
-    .button {
-    	margin-top: var(--layer-margin, .75rem);
-    }
-
     // animations slider
-    .tt-lg,
+    .tt-xl,
     .desc,
     .button {
     	transition: transform 0.6s ease 0.2s, opacity 0.5s ease 0.2s;
     	opacity: 0;
     }
-    .tt-lg {
+    .tt-xl {
     	transform: translateY(50px) scale(.9);
     }
     .desc {
@@ -214,49 +195,72 @@
     	transform: translateY(80px) scale(.8);
     }
     .is-selected {
-    	.tt-lg, .desc, .button {
+    	.tt-xl, .desc, .button {
     		transform: none;
     		opacity: 1;
     	}
     }
-}
-@include media-breakpoint-up(md) {
-	.home-slider {
-		--slide-height: calc(720 / 1920 * 100%);
-		--tt-lg: 2rem;
-		--desc-font-size: 1.075rem;
-		--layer-margin: 1.125rem;
-		--text-max-width: 70%;
-		
-		.text-slider {
-			padding-left: 1.75rem;
-			padding-right: 1.75rem;
+    // dot
+    .flickity-page-dots {
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	left: auto;
+    	right: 0;
+    	flex-direction: column;
+    	width: auto;
+    	bottom: 0;
+    	top: 0;
+    }
+    .dot {
+		counter-increment: carousel-cell;
+		width: auto;
+		height: auto;
+		border-radius: 0;
+		background-color: transparent;
+		font-size: 13px;
+		padding: 7px 10px;
+		color: #fff;
+		position: relative;
+        &:before {
+        	content: '';
+        	width: 7px;
+        	height: 1px;
+        	background-color: rgba(#fff,.7);
+        	transition: width 0.5s ease;
+        	@include absolute(0,100%,0);
+        	margin: auto 0;
+        }
+		&:after {
+			content: counter(carousel-cell);
+		}
+		&.is-selected {
+			font-size: 18px;
+			&:before {
+				width: 30px;
+			}
+		}
+	}
+	// fade effect
+	.flickity-slider {
+		transform: none !important;
+		.carousel-cell {
+			left: 0 !important;
+			opacity: 0;
+			z-index: -1;
+			transform: none !important;
+			transition: opacity 1.75s ease-in-out;
+			&.is-selected {
+				opacity: 1;
+				z-index: 0;
+			}
 		}
 	}
 }
-@include media-breakpoint-up(lg) {
-	.home-slider {
-		--tt-lg: calc(22px + 1.25vw);
-		--desc-font-size: 1.125rem;
-		--text-max-width: 65%;
 
-		.flickity-button {
-			--button-size: 50px;
-			&.previous {
-				left: 2.25%;
-			}
-			&.next {
-				right: 2.25%;
-			}
-		}
-	}
-}
-@include media-breakpoint-up(xxl) {
-	.home-slider {
-        --slide-height: calc(600 / 1920 * 100%);
-	}
-}
-// 
+
+
+// carousel 
 .carousel-c2md4,
 .carousel-c2md3,
 .carousel-c2md5 {

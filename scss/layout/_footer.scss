@@ -65,10 +65,10 @@
 }
 // Footer
 .footer {
-    background-color: #6b7186;
+    background-color: #2b2e39;
     color: rgba(#fff,.75);
     font-size: 15px;
-    position: relative;
+    @include fixed(null,0,0,0);
     z-index: 1;
 
     &-tt {
@@ -95,7 +95,7 @@
         position: relative;
         color: rgba(#fff,.5);
         margin-top: 2rem;
-        border-top: 1px solid rgba(#ccc,.2);
+        border-top: 1px solid rgba(#ccc,.07);
     }
 }
 @include media-breakpoint-up(md) {

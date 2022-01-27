@@ -1,35 +1,52 @@
 extends template/template
 block vars
-    - title = 'Header V2'
+    - title = 'Header V3'
     - menu_active = ''
     - wrapper_class = ''
-    - wrapper_id = ''
+    - wrapper_id = 'home-page'
     - home_slider = false
     - banner_top = false
     - banner_image = 'banner.jpg'
     - login = false
 
 block layers 
-    section.home-banner.block-bg
-        .container 
-            .thumb-res.wide-sm: img.fit-cover(src="https://cdn.pixabay.com/photo/2018/07/10/07/56/business-3528035_960_720.jpg" alt="")
-            .absolute.d-flex.align-items-center
-                .home-banner-text.px-5.mw-md-50.text-white
-                    h1.tt-xl.text-white Graphic Resources for Everyone
-                    .desc.mt-4 Với hơn 10 năm kinh nghiệm trong lĩnh vực thiết kế website. BizMaC cam kết mang đến cho Quý khách sự an tâm tuyệt đối và hài lòng cao nhất
-                    .button.mt-4: button.btn.px-5.btn-primary Get Started
+    section.home-banner.block-bg(style="background-image:url('https://cdn.pixabay.com/photo/2016/05/20/16/14/notebook-1405306_960_720.jpg')")
+        .container.vh-100
+            .absolute.d-flex.text-center
+                .home-banner-text
+                    h1.tt-xl Graphic Resources for Everyone
+                    .desc Với hơn 10 năm kinh nghiệm trong lĩnh vực thiết kế website. BizMaC cam kết mang đến cho Quý khách sự an tâm tuyệt đối và hài lòng cao nhất
+                    .button: a.btn.px-5.btn-primary(href="about.html") Get Started
+    //- .home-banner.video-slider
+        .overlay-video-slider.overlay-dark
+        video.resizelistener#hpbk(controlslist="nodownload" preload="auto" data-stylerecorder="true", autoplay, muted, playsinline, loop, sposter="https://pixabay.com/get/gead2d28a301c1e1f97d297dd239f19bc1cc1a1065035af29a8cf313908c935828b68fea72cf80d8e321bd3380033eea1fffe0f4545bc8244487ed121fb121b43cd377932590300b7f27f0adf73621ef4_1280.jpg")
+            source(src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" data-stylerecorder="true")
+            | Your browser does not support the
+        .container.vh-100.absolute.d-flex.text-center
+            .home-banner-text
+                h1.tt-xl Graphic Resources for Everyone
+                .desc "V Yachts values its (prospective) customers and shares its values with them."
+                .button: button.btn.px-5.btn-primary Get Started
+    //- .home-banner.home-slider-fullscreen 
+        .home-slider 
+            .carousel-cell
+                img.fit-cover(src="https://cdn.pixabay.com/photo/2018/04/30/19/43/summer-3363788_960_720.jpg")
+                .container.absolute.d-flex.text-center
+                    .home-banner-text
+                        .tt-xl Reusable JavaScript UI Component Library
+                        .desc Beautiful, modern overlay windows for presenting various types of media
+            .carousel-cell
+                img.fit-cover(src="https://cdn.pixabay.com/photo/2017/08/02/15/25/book-2572101_960_720.jpg")
+                .container.absolute.d-flex.text-center
+                    .home-banner-text
+                        .tt-xl Where can I Download the Code?
+                        .desc Carousel Responsive, touch-friendly carousels with natural, real-life feel
+            .carousel-cell
+                img.fit-cover(src="https://cdn.pixabay.com/photo/2017/08/07/02/14/people-2598752_960_720.jpg")
+                .container.absolute.d-flex.text-center
+                    .home-banner-text
+                        .tt-xl Do Licenses have Features Limitation?
+                        .desc Panzoom Easy to use panning and zooming gestures for any HTML content
 block mainer    
     main.mainer
-        .container.py-5 
-            .tt-md.text-center.mb-2 All Products
-            .row.row-cols-2.row-cols-md-4.row-cols-lg-5.g-3.g-lg-4
-                .col
-                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
-                .col
-                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
-                .col
-                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
-                .col
-                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
-                .col
-                    .thumb-res.square: +img('theme/thumb@1x1.jpg')(class="fit-cover")
+

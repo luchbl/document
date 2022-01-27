@@ -1,0 +1,109 @@
+// banner static
+.home-banner {
+    position: relative;
+    z-index: 8;
+    width: 100%;
+    height: 100vh;
+    background-color: #444;
+    .text-center {
+        justify-content: center;
+    }
+    .text-right {
+        justify-content: flex-end;
+    }
+    .desc,
+    .tt-xl {
+        color: #fff;
+    }
+    .desc {
+        margin-top: 1.25rem;
+    }
+    .button {
+        margin-top: 1.5rem;
+    }
+    .d-flex {
+        align-items: flex-end;
+    }
+    &-text {
+        padding: 0 2rem;
+        padding-bottom: 8vh;
+    }
+    @include media-breakpoint-up(md) {
+        &-text {
+            max-width: 85%;
+        }
+        .desc {
+            margin-top: 1rem;
+            font-size: 18px;
+        }
+        .button {
+            margin-top: 1.75rem;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        --tt-xl: calc(2rem + 1.25vw);
+        
+        .desc {
+            font-size: 20px;
+        }
+        .text-center .desc {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 12px 30px;
+        }
+    }
+}
+// home slider video
+.video-slider {
+    z-index: 8;
+    background-color: #31394f;
+    video {
+        object-fit: cover;
+        background-size: cover;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .overlay-dark {
+        z-index: 1;
+    }
+    .text-slider {
+        align-items: flex-end;
+        padding-bottom: 20vh;
+    }
+    .tt-slider {
+        text-transform: capitalize;
+    }
+}
+@include media-breakpoint-up(md) {
+.video-slider {
+        .text-inner {
+            //max-width: 670px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+@include media-breakpoint-up(xl) {
+.video-slider {
+        .desc {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// home slider slide 
+.home-slider {
+    .home-banner-text {
+        margin-bottom: 5vh;
+    }
+    .carousel-cell:before {
+        content: '';
+        @extend %absolute-all;
+        background-color: rgba(#000,.1);
+    }
+}

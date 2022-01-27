@@ -1,0 +1,16 @@
+extends template/template
+block vars
+    - title = 'About Us'
+    - menu_active = ''
+    - wrapper_class = ''
+    - wrapper_id = 'home-page'
+    - home_slider = false
+    - banner_top = true
+    - banner_image = 'banner.jpg'
+    - login = false
+
+block breadcrumb
+    +breadcrumb({}, title)
+block mainer
+    main.mainer
+        .container 

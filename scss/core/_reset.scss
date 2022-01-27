@@ -97,6 +97,8 @@ a.absolute {
 	z-index: 800;
 	background-color: rgba(#000, .5);
 	display: none;
+	height: 100vh;
+	cursor: pointer;
 }
 .text-underline {
 	text-decoration: underline !important;
@@ -294,7 +296,6 @@ a.absolute {
 }
 .mainer {
 	margin: auto;
-	min-height: 300px;
 	z-index: 9;
 }
 [data-fancybox] {
@@ -321,9 +322,11 @@ a.absolute {
     transition: transform 0.4s ease, opacity 0.4s ease;
     transform: translateX(100%);
 	opacity: 0;
+	visibility: hidden;
     &.active {
         transform: none;
 		opacity: 1;
+		visibility: visible;
     }
     @include media-breakpoint-up(lg) {
     	width: 44px;

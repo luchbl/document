@@ -1,14 +1,25 @@
+.btn-submit {
+	@include absolute(0,0);
+	padding: $input-padding-y $input-padding-x;
+	width: 40px;
+	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23777777" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center center;
+	background-size: 16px;
+	line-height: 1.5;
+	border: none;
+}
 .form-search {
 	@include absolute(0,0,null,0);
 	z-index: 981;
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity .5s ease;
+	padding: 8px;
     
-    .form-group {
-    	background: #fff;
-    	border-radius: 0 0 1rem 1rem;
-    	padding: 1px;
+    .btn-submit {
+    	height: 46px;
+    }
+    &-group {
+    	position: relative;
     }
     &-control {
     	margin: .75rem .5rem;
@@ -16,7 +27,7 @@
     }
 	.form-control {
 		border: none;
-		background: #f9f9f9;
+		background: #fff;
         height: 46px;
         padding-left: 1rem;
         padding-right: 2.5rem;
@@ -25,80 +36,9 @@
 			@include placeholder-focus;
 		}
 	}
-	.btn-submit {
-		height: 46px;
-		@include absolute(0,0);
-		padding: $input-padding-y $input-padding-x;
-		width: 40px;
-		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23777777" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat center center;
-		background-size: 16px;
-		line-height: 1.5;
-		border: none;
-	}
-	.close-search {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		margin: .5rem auto;
-		display: block;
-		font-weight: 300;
-		font-size: 18px;
-		background: rgba(#fff,.2);
-		color: #fff;
-	}
 	&.active {
 		opacity: 1;
 		visibility: visible;
-	}
-	#searchwait {
-		@include absolute(7px, 35px);
-		width: 25px;
-		height: 25px;
-		background: url('skin/loading.gif') no-repeat center center;
-	}
-
-	// suggest
-	&-suggest {
-	    background: #fff;
-	    border-radius: 0 0 12px 12px;
-	    z-index: 77;
-	    overflow: hidden;
-	    .cap {
-			padding: .5rem 1rem;
-			color: #888;
-		}
-	    &-item {
-	    	position: relative;
-	    	display: flex;
-	    	align-items: center;
-	    	padding: 1rem;
-	    	border-top: 1px solid #eee;
-	    	&.more {
-	    		justify-content: center;
-	    	}
-	    }
-	    .thumb {
-	    	width: 70px;
-	    	height: 70px;
-	    	flex: 0 0 auto;
-	    	margin: 0 1rem 0 0;
-	    }
-	    .tt {
-	    	margin-bottom: .125rem;
-	    	@include ellips(2);
-	    	font-weight: 500;
-	    }
-	    .price {
-	    	color: #e00;
-	    	font-weight: 600;
-	    	&-origin {
-	    		color: #999;
-	    		font-weight: 400;
-	    		font-size: 90%;
-	    		margin-left: .25rem;
-	    		vertical-align: 1px;
-	    	}
-	    }
 	}
 }
 @include media-breakpoint-up(md) {
@@ -113,46 +53,47 @@
 		flex: 1 1 auto;
 		padding-left: 3rem;
 		z-index: 10;
-		.form-group {
-			max-width: 600px;
-			margin-left: auto !important;
-			margin-right: auto !important;
+		&-group {
+			margin-left: auto;
+			margin-right: -8px;
+			max-width: 70%;
 			padding: 0;
+			background: transparent;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.btn-submit {
+			background-size: 18px;
 		}
 		.form-control {
-			border: 1px solid transparent;
+			border: none;
+			border-radius: 0;
+			background: transparent;
+			color: #fff;
 		}
 		&-control {
 			margin: 0;
 		}
-		&-suggest {
-			@include absolute(100%,0,null,0);
-			border: 1px solid #ddd;
-			max-height: 0;
-			opacity: 0;
-			margin-top: -1px;
-			transition: max-height 0.5s ease;
-			box-shadow: 0 8px 24px -8px rgba(#000,.1);
-			&::-webkit-scrollbar {
-				width: 5px;
-			}
-			&::-webkit-scrollbar-track {
-				background-color: transparent;
-			}
-			&::-webkit-scrollbar-thumb {
-				background-color: rgba(#000,.1);
-			}
-		}
-		&.focus {
-			.form-control {
-				border-color: #ddd;
-				border-radius: 8px 8px 0 0;
-			}
-			.form-search-suggest {
-				max-height: 80vh;
-				overflow-y: auto;
+		&.active {
+			.form-search-group {
+				max-width: 400px;
 				opacity: 1;
+				visibility: visible;
+				transition: max-width 0.35s ease, opacity .65s ease;
 			}
 		}
 	}
+}
+@include media-breakpoint-up(xl) {
+	.form-search {
+		&-group {
+			max-width: 430px;
+		}
+		&.active .form-search-group {
+			max-width: 480px;
+		}
+	}
+}
+.form-search-open .header {
+    background-color: #333;
 }

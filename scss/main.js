@@ -11,26 +11,26 @@ $('<div/>', { class: 'bg-overlay', id: 'menu-backdrop' }).appendTo('#header');
 // menu overlay close menu
 $('#menu-backdrop, #close-menu').click(function() {
     $('#menu-backdrop').fadeOut(200);
-    $('body').removeClass('menu-open');
-    $('#navigate, #form-search').removeClass('active');
+    $('body').removeClass('menu-open form-search-open');
+    $('#navigate, #form-search, #search-toggle').removeClass('active');
 });
 // Back to top
 $(window).on('scroll', function() {
     ($(window).scrollTop() > 150 ? $('#backtop').addClass('active') : $('#backtop').removeClass('active')); 
-})
+});
 $('#backtop').click(function(){
     $("html, body").animate({scrollTop: 0}, 100);
 });
 
 // Form search
 $('#search-toggle').click(function() {
-    $('#form-search').toggleClass('active');
+    $('#form-search, #search-toggle').toggleClass('active');
     $('#menu-backdrop').fadeToggle(200);
     $('body').toggleClass('form-search-open');
 });
 $('#close-search').click(function() {
     $('#menu-backdrop').fadeOut();
-    $('#form-search').removeClass('active');
+    $('#form-search, #search-toggle').removeClass('active');
     $('body').removeClass('form-search-open');
 });
 $('#form-search .form-control').on('focusin', function() {
@@ -72,6 +72,14 @@ $(window).on('load', function() {
     $('.preloader').addClass('loaded');
     // wow.init();
 });
+
+// footer
+$(window).on('resize load', function() {
+    var fh = $('.footer').innerHeight();
+    if($('.footer-h').length) {
+        $('.footer-h').height(fh);
+    }
+}).trigger('resize');
 
 // ************************* */
 // (function($) {
